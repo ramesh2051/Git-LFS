@@ -14,5 +14,6 @@ jobs:
         run: |
           curl -LX GET https://github.com/CanarysPlayground/PartsUnlimited/releases/download/v1.1/spacegameleaderboard.zip \
                 --header "Accept: application/vnd.github.v3+json" \
-                --header "Authorization: Bearer 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" \
+                --header "Authorization: Bearer 
+                  GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}" \
                 -O
