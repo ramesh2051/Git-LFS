@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
 env: 
-GH_API_TOKEN= ${{ secrets.PAT_TOKEN }}
+  GH_API_TOKEN: ${{ secrets.PAT_TOKEN }}
 
 jobs:
   build:
