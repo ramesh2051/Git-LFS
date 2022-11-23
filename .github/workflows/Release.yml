@@ -18,9 +18,17 @@ jobs:
                 --header "Accept: application/vnd.github.v3+json" \
                 --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
-    
-          
-      - uses: actions/download-artifact@v1
+ 
+
+
+      - name: Publish binaries
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
         with:
-          name: spacegameleaderboard.zip
+         repo_token: ${{ secrets.PAT_TOKEN }}
+         file: /home/runner/work/Git-LFS/Git-LFS/spacegameleaderboard.zip
+         asset_name: test-release
+         tag: ${{ github.ref }}
+         overwrite: true
+         body: "This is my release text"
       
