@@ -18,7 +18,10 @@ jobs:
                 --header "Accept: application/vnd.github.v3+json" \
                 --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
- 
+      - name: list files
+        run:  |
+         ls -ltr 
+         
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
