@@ -26,16 +26,11 @@ jobs:
           mkdir artifact
           mv spacegameleaderboard.zip artifact
           
-      - name: Download a Build Artifact
-        uses: actions/download-artifact@v3.0.1
-        with:
-          name: Release-artifact
-          path: ${{github.workspace}}/artifact
           
       - name: Upload the artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: 'Release-artifact'
+          args: 'artifact'
       
