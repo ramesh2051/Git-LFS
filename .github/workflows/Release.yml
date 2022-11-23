@@ -22,11 +22,16 @@ jobs:
         run:  |
          ls -ltr 
      
-     
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          name: Release-artifact
+          path: ${{github.workspace}}/spacegameleaderboard.zip
+          
       - name: Upload the artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: 'spacegameleaderboard.zip'
+          args: 'Release-artifact'
       
