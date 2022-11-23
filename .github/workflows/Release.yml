@@ -19,9 +19,6 @@ jobs:
                 --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
  
-
-
-      - name: Publish binaries
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
