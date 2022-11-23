@@ -21,16 +21,20 @@ jobs:
       - name: list files
         run:  |
          ls -ltr 
-      - name: moving a dir 
-        run: |
-          mkdir artifact
-          mv spacegameleaderboard.zip artifact
+         
+         run: |
+          gh release upload -R ramesh2051/Git-LFS 1.4 spacegameleaderboard.zip
+#       - name: moving a dir 
+#         run: |
+#           mkdir artifact
+#           mv spacegameleaderboard.zip artifact
           
           
-      - name: Upload the artifacts
-        uses: skx/github-action-publish-binaries@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          args: 'artifact'
+#       - name: Upload the artifacts
+#         uses: skx/github-action-publish-binaries@master
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           args: 'artifact'
+        
       
