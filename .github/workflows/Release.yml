@@ -21,14 +21,17 @@ jobs:
       - name: list files
         run:  |
          ls -ltr 
-         
+     
+     
+      - name: Build
+        run: cargo build --release --locked
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
          repo_token: ${{ secrets.PAT_TOKEN }}
          file: ${{github.workspace}}/spacegameleaderboard.zip
          asset_name: test-release
-         tag: 1.1.3
+         tag: 1.1.4
          overwrite: true
          body: "This is my release text"
       
