@@ -23,7 +23,7 @@ jobs:
          ls -ltr 
       - name: moving a dir 
         run: |
-          madir artifact
+          mkdir artifact
           mv spacegameleaderboard.zip artifact
           
       - name: Download a Build Artifact
