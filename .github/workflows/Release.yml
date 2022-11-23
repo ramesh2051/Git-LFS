@@ -18,10 +18,9 @@ jobs:
                 --header "Accept: application/vnd.github.v3+json" \
                 --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
-      
-      
-      - uses: actions/upload-artifact@v1
+    
+          
+      - uses: actions/download-artifact@v1
         with:
-          name: spacegameleaderboard
-          path: .
+          name: spacegameleaderboard.zip
       
