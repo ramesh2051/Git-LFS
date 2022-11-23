@@ -23,7 +23,10 @@ jobs:
          ls -ltr 
          
          run: |
+          env:
+            GH_TOKEN: ${{ secrets.PAT_TOKEN }}
           gh release upload -R ramesh2051/Git-LFS 1.4 spacegameleaderboard.zip
+          
 #       - name: moving a dir 
 #         run: |
 #           mkdir artifact
