@@ -21,12 +21,16 @@ jobs:
       - name: list files
         run:  |
          ls -ltr 
-     
+      - name: moving a dir 
+        run: |
+          madir artifact
+          mv spacegameleaderboard.zip artifact
+          
       - name: Download a Build Artifact
         uses: actions/download-artifact@v3.0.1
         with:
           name: Release-artifact
-          path: .
+          path: ${{github.workspace}}/artifact
           
       - name: Upload the artifacts
         uses: skx/github-action-publish-binaries@master
