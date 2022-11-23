@@ -25,6 +25,3 @@ jobs:
           name: spacegameleaderboard.zip
           path: .
       
-      - uses: actions/download-artifact@v1
-        with:
-          name: spacegameleaderboard.zip
