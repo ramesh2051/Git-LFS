@@ -3,6 +3,8 @@ name: Download Release
 on:
   push:
     branches: [ "main" ]
+env: 
+GH_API_TOKEN= ${{ secrets.PAT_TOKEN }}
 
 jobs:
   build:
@@ -14,6 +16,5 @@ jobs:
         run: |
           curl -LX GET https://github.com/CanarysPlayground/PartsUnlimited/releases/download/v1.1/spacegameleaderboard.zip \
                 --header "Accept: application/vnd.github.v3+json" \
-                --header "Authorization: Bearer 
-                  GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}" \
+                --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
