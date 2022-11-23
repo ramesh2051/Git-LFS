@@ -23,15 +23,10 @@ jobs:
          ls -ltr 
      
      
-      - name: Build
-        run: cargo build --release
-      - name: Upload binaries to release
-        uses: svenstaro/upload-release-action@v2
+      - name: Upload the artifacts
+        uses: skx/github-action-publish-binaries@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-         repo_token: ${{ secrets.PAT_TOKEN }}
-         file: ${{github.workspace}}/spacegameleaderboard.zip
-         asset_name: test-release
-         tag: 1.1.4
-         overwrite: true
-         body: "This is my release text"
+          args: 'spacegameleaderboard.zip'
       
