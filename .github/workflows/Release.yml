@@ -25,6 +25,8 @@ jobs:
          run: |
           env:
             GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+            
+          run: |
           gh release upload -R ramesh2051/Git-LFS 1.4 spacegameleaderboard.zip
           
 #       - name: moving a dir 
