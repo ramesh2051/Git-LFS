@@ -21,9 +21,20 @@ jobs:
       - name: list files
         run:  |
          ls -ltr 
-         
-      - uses: cb80/pubrel@latest
-        with:
+  
+  Create-release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3    
+    - uses: octokit/request-action@v2.x
+      id: create_release
+      with:
+        route: POST /repos/CanarysPlayground/repo-template1/releases
+        tag_name: v1.1.4
+        GITHUB_TOKEN: ${{secrets.PAT_TOKEN}}   
+   
+    - uses: cb80/pubrel@latest
+      with:
          replace: latest
          files: |
            spacegameleaderboard.zip
