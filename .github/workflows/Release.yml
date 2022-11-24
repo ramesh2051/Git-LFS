@@ -6,22 +6,8 @@ on:
 env: 
   GH_API_TOKEN: ${{ secrets.PAT_TOKEN }}
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2  
-      
-      - name: Download release
-        run: |
-          curl -LX GET https://github.com/CanarysPlayground/PartsUnlimited/releases/download/v1.1/spacegameleaderboard.zip \
-                --header "Accept: application/vnd.github.v3+json" \
-                --header "Authorization: Bearer ${GH_API_TOKEN}" \
-                -O
-      - name: list files
-        run:  |
-         ls -ltr 
-  
+jobs:    
+   
   Create-release:
     runs-on: ubuntu-latest
     steps:
@@ -30,9 +16,20 @@ jobs:
       id: create_release
       with:
         route: POST /repos/CanarysPlayground/repo-template1/releases
-        tag_name: v1.1.4
+        tag_name: v1.1.5
         GITHUB_TOKEN: ${{secrets.PAT_TOKEN}}   
    
+   
+    - name: Download release
+      run: |
+          curl -LX GET https://github.com/CanarysPlayground/PartsUnlimited/releases/download/v1.1/spacegameleaderboard.zip \
+                --header "Accept: application/vnd.github.v3+json" \
+                --header "Authorization: Bearer ${GH_API_TOKEN}" \
+                -O
+    - name: list files
+      run:  |
+         ls -ltr 
+         
     - uses: cb80/pubrel@latest
       with:
          replace: latest
