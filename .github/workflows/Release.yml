@@ -30,7 +30,7 @@ jobs:
       run:  |
          ls -ltr 
          
-    - name: Upload release    
+#     - name: Upload release    
     - uses: cb80/pubrel@latest
       with:
          replace: latest
