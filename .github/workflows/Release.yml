@@ -16,7 +16,7 @@ jobs:
       id: create_release
       with:
         route: POST /repos/ramesh2051/Git-LFS/releases
-        tag_name: v1.9
+        tag_name: v1.10
         GITHUB_TOKEN: ${{secrets.NEW_TOKEN}}   
    
    
@@ -33,7 +33,7 @@ jobs:
 #     - name: Upload release    
     - uses: cb80/pubrel@latest
       with:
-         replace: v1.9
+         replace: v1.10
         # tag_name: v1.9
          files: |
            spacegameleaderboard.zip
