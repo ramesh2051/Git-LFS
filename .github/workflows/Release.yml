@@ -16,7 +16,7 @@ jobs:
       id: create_release
       with:
         route: POST /repos/ramesh2051/Git-LFS/releases
-        tag_name: 1.6
+        tag_name: v1.6
         GITHUB_TOKEN: ${{secrets.NEW_TOKEN}}   
    
    
