@@ -22,7 +22,7 @@ jobs:
    
     - name: Download release
       run: |
-          curl -LX GET https://github.com/Playground-demo/deepspace/releases/download/1.0/.zip \
+          curl -LX GET https://github.com/Playground-demo/deepspace/releases/download/1.0/*.zip \
                 --header "Accept: application/vnd.github.v3+json" \
                 --header "Authorization: Bearer ${GH_API_TOKEN}" \
                 -O
