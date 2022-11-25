@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3    
-    - uses: octokit/request-action@v2.x
-      id: create_release
-      with:
-        route: POST /repos/ramesh2051/Git-LFS/releases
-        tag_name: v1.12
-        GITHUB_TOKEN: ${{secrets.NEW_TOKEN}}   
+#     - uses: octokit/request-action@v2.x
+#       id: create_release
+#       with:
+#         route: POST /repos/ramesh2051/Git-LFS/releases
+#         tag_name: v1.12
+#         GITHUB_TOKEN: ${{secrets.NEW_TOKEN}}   
    
    
     - name: Download release
